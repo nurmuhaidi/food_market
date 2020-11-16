@@ -6,6 +6,8 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -41,6 +43,7 @@ class _FoodPageState extends State<FoodPage> {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
                       image: DecorationImage(
                         image: AssetImage('assets/image/avatar.png'),
                         fit: BoxFit.cover,
@@ -71,8 +74,44 @@ class _FoodPageState extends State<FoodPage> {
                   )
                 ],
               ),
-            )
+            ),
             //// LIST OF FOOD (TABS)
+            Container(
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                children: [
+                  CustomTabBar(
+                    titles: ['New Taste', 'Popular', 'Recomended'],
+                    selectedIndex: selectedIndex,
+                    onTap: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Builder(builder: (_) {
+                    String body = (selectedIndex == 0)
+                        ? 'New Taste Body'
+                        : (selectedIndex == 1)
+                            ? 'Popular Body'
+                            : 'Recomended Body';
+                    return Center(
+                      child: Text(
+                        body,
+                        style: blackFontStyle2,
+                      ),
+                    );
+                  }),
+                  SizedBox(
+                    height: 80,
+                  )
+                ],
+              ),
+            )
           ],
         )
       ],
