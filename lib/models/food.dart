@@ -50,5 +50,15 @@ List<Food> mockFoods = [
     ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
     price: 100000,
     rate: 4.5,
+  ),
+  Food(
+    id: 4,
+    picturePath: 'assets/image/food_image.jpg',
+    name: 'Sate Sayur Mantap',
+    description:
+        'Sate Sayur Sultan adalah menu sate yang paling terkenal di bandung',
+    ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
+    price: 50000,
+    rate: 5,
   )
 ];
