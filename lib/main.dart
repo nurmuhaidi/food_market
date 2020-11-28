@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_market/models/models.dart';
 import 'package:get/get.dart';
 
 import 'ui/pages/pages.dart';
@@ -17,7 +18,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: FoodDetailsPage(
+        transaction: Transaction(
+          food: mockFoods[0],
+        ),
+      ),
     );
   }
 }
