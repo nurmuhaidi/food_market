@@ -1,6 +1,6 @@
 part of 'models.dart';
 
-enum TransactionStatus { delivered, on_delivered, pending, cancelled }
+enum TransactionStatus { delivered, on_delivery, pending, cancelled }
 
 class Transaction extends Equatable {
   final int id;
@@ -52,14 +52,14 @@ class Transaction extends Equatable {
       ];
 }
 
-List<Transaction> mockTransaction = [
+List<Transaction> mockTransactions = [
   Transaction(
     id: 1,
     food: mockFoods[1],
     quantity: 10,
     total: (mockFoods[1].price * 10 * 1.1).round() + 50000,
     dateTime: DateTime.now(),
-    status: TransactionStatus.on_delivered,
+    status: TransactionStatus.on_delivery,
     user: mockUser,
   ),
   Transaction(
@@ -69,6 +69,15 @@ List<Transaction> mockTransaction = [
     total: (mockFoods[2].price * 7 * 1.1).round() + 50000,
     dateTime: DateTime.now(),
     status: TransactionStatus.delivered,
+    user: mockUser,
+  ),
+  Transaction(
+    id: 3,
+    food: mockFoods[3],
+    quantity: 5,
+    total: (mockFoods[3].price * 5 * 1.1).round() + 50000,
+    dateTime: DateTime.now(),
+    status: TransactionStatus.cancelled,
     user: mockUser,
   )
 ];
