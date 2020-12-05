@@ -40,6 +40,8 @@ class _MainPageState extends State<MainPage> {
                     picturePath: 'assets/image/love_burger.png',
                     buttonTitle1: 'Find Foods',
                     buttonTap1: () {},
+                    buttonTap2: () {},
+                    buttonTitle2: 'Oke',
                   ),
                 ),
                 Center(
