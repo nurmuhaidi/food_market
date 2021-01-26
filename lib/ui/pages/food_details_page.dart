@@ -175,7 +175,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           Container(
                             margin: EdgeInsets.fromLTRB(0, 4, 0, 41),
                             child: Text(
-                              widget.transaction.food.description,
+                              widget.transaction.food.ingredients,
                               style: greyFontStyle,
                             ),
                           ),

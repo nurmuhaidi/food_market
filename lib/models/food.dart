@@ -1,5 +1,7 @@
 part of 'models.dart';
 
+enum FoodType { new_food, popular, recomended }
+
 class Food extends Equatable {
   final int id;
   final String picturePath;
@@ -8,6 +10,7 @@ class Food extends Equatable {
   final String ingredients;
   final int price;
   final double rate;
+  final List<FoodType> types;
 
   Food({
     this.id,
@@ -17,6 +20,7 @@ class Food extends Equatable {
     this.ingredients,
     this.price,
     this.rate,
+    this.types = const [],
   });
 
   @override
@@ -41,6 +45,7 @@ List<Food> mockFoods = [
     ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
     price: 150000,
     rate: 4,
+    types: [FoodType.new_food, FoodType.popular, FoodType.recomended],
   ),
   Food(
     id: 2,
@@ -51,6 +56,7 @@ List<Food> mockFoods = [
     ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
     price: 300000,
     rate: 5,
+    types: [FoodType.new_food, FoodType.recomended],
   ),
   Food(
     id: 3,
@@ -61,6 +67,7 @@ List<Food> mockFoods = [
     ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
     price: 100000,
     rate: 4.5,
+    types: [FoodType.popular],
   ),
   Food(
     id: 4,
@@ -71,5 +78,6 @@ List<Food> mockFoods = [
     ingredients: 'Bawang Merah, Paprika, Bawang Bombay, Timun',
     price: 50000,
     rate: 5,
+    types: [FoodType.new_food],
   )
 ];
