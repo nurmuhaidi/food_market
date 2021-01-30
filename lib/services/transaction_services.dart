@@ -11,8 +11,12 @@ class TransactionServices {
       Transaction transaction) async {
     await Future.delayed(Duration(seconds: 2));
 
+    // return ApiReturnValue(
+    //   message: "Transaction Failed",
+    // );
+
     return ApiReturnValue(
-        value:
-            transaction.copyWidth(id: 123, status: TransactionStatus.pending));
+      value: transaction.copyWith(id: 123, status: TransactionStatus.pending),
+    );
   }
 }

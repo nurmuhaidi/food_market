@@ -20,12 +20,12 @@ class Transaction extends Equatable {
       this.status,
       this.user});
 
-  Transaction copyWidth({
+  Transaction copyWith({
     int id,
     Food food,
     int quantity,
     int total,
-    DateTime daeTime,
+    DateTime dateTime,
     TransactionStatus status,
     User user,
   }) {

@@ -203,7 +203,18 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                               ),
                               SizedBox(
                                 child: RaisedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      Get.to(PaymentPage(
+                                        transaction:
+                                            widget.transaction.copyWith(
+                                          quantity: quantity,
+                                          total: quantity *
+                                              widget.transaction.food.price,
+                                        ),
+                                      ));
+                                    });
+                                  },
                                   color: mainColor,
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(
